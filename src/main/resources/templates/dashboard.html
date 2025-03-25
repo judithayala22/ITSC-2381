@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>ByteTower</title>
+        <link rel="stylesheet" href="/css/styles.css">
+    </head>
+    <body>
+        <div class="toolbar">
+            <button class="menu-button" id="menuButton" onclick="toggleSidebar()"> ≡ Menu</button> <!--windows key + . for the symbol--> 
+            <h1>ByteTower Dashboard</h1>
+        </div>
+
+        <div class="sidebar" id="sidebar">
+            <button class="close-sidebar-btn" onclick="toggleSidebar()">✕</button>
+            <ul>
+                <li><a href="#SecSharing">Secure Sharing</a></li>
+                <li><a href="#EncryptInfo">Encrypt Sensitive Information</a></li>
+                <li><a href="#ScamAwareness">Scam Awareness</a></li>
+                <li><a href="#SecFileSharingWUsers">Secure File Sharing with Other Users</a></li>
+                <li><a href="#TrackThreats">Track Real-Time Cyber Threats</a></li>
+                <li><a href="#Malware">Malicious Software</a></li>
+                <li><a href="#DigiSign">Verifying Digital Signatures</a></li>
+            </ul>
+        </div>
+
+        <div id="tab" class="tabs">
+            <ul class="tab-list">
+                <li class="tab active" onclick="showTab('general')">General</li>
+                <li class="tab" onclick="showTab('platforms')">Platforms</li>
+                <li class="tab" onclick="showTab('requirements')">Requirements</li>
+                <li class="tab" onclick="showTab('steps')">Steps</li>
+                <li class="tab" onclick="showTab('feedback')">Feedback</li>
+            </ul>
+        </div>
+
+        <div id="content" class="content">
+            <div id="general" class="tab-content active">
+                <h2>General Information</h2>
+                <p>In an era where cyber threats are increasingly sophisticated, implementing robust security measures is essential.
+                    This guide focuses on key cybersecurity strategies for secure file sharing within businesses.
+                    Secure sharing tactics like encryption, access controls, and authentication mechanisms mitigate risks of unauthorized access or data leaks.<br>
+                </p>
+                <h2>What Is TTP&apos;S</h2> 
+                <h3>Tactics:</h3> 
+                    <p> High level description of the behavior and strategy from any threat<br> 
+                    factor. Thes factors include showing adversary to achieve any specific goal you may<br>
+                    have from any objective. 
+                    </p>
+                <h3>Techniques:</h3> 
+                <p>aren’t really specified for your organization; techniques are non-<br>
+                    detailed guidelines that showcase different methods on how cyber-attacks uses<br>
+                    them. From doing any techniques it is important to identify any distinction, they are <br>
+                    the facts or what threat actors do.  </p> 
+
+                <h3>Procedure:</h3> 
+                     <p>Procedures are a designated order of actions that combat that attacker's tactic<br>
+                        from infiltrating important data. They are detailed descriptions that the organization	will choose to execute the desired action.</p>
+                <p>
+                    The confidentiality and integrity of stored and retrieved files are preserved through effective user access management and encryption protocols. 
+                    Using a Trusted Third Party (TTP) ensures that data transfers between employees remain secure and protected against malicious attacks. 
+                    Effective key management strategies also contribute to ensuring only authorized users can decrypt and access sensitive files. 
+                </p>
+                <img src="/images/security.png" alt="Security Illustration" class="clipart">
+            </div>
+                
+            <div id="platforms" class="tab-content">
+                <h2>Trusted Platforms for Secure File Sharing</h2>
+                <ul class="platform-links">
+                    <li><a href="#" onclick = "showPlatformInfo('dropbox')" target ="_blank">Dropbox TTP Setup</a></li>
+                    <!-- https://www.dropbox.com/business <img src="/images/security.png" alt="Security Illustration" class="clipart"> -->
+                    <li><a href="#" onclick = "showPlatformInfo('google_drive')" target="_blank">Google Drive TTP Setup</a></li>
+                    <!-- https://workspace.google.com/products/drive/ <img src="/images/security.png" alt="Security Illustration" class="clipart"> -->
+                    <li><a href="#" onclick = "showPlatformInfo('onedrive')" target="_blank">OneDrive TTP Setup</a></li>
+                    <!-- https://www.microsoft.com/en-us/microsoft-365/onedrive/online-cloud-storage <img src="/images/security.png" alt="Security Illustration" class="clipart"> -->
+                    <li><a href="#" onclick = "showPlatformInfo('sharepoint')" target="_blank">SharePoint TTP Setup</a></li>
+                    <!-- https://www.microsoft.com/en-us/microsoft-365/sharepoint/collaboration<img src="/images/security.png" alt="Security Illustration" class="clipart"> -->
+                </ul>
+            <div id="platform-info" class="info-container"></div>
+            </div>
+
+            <div id="requirements" class="tab-content">
+                <h2>Requirements for Secure File Sharing</h2>
+                <ul>
+                    <li>Trusted Third Party Integration</li>
+                    <li>Encryption Protocols</li>
+                    <li>Group User Access Management</li>
+                    <li>Key Management Strategy</li>
+                    <li>Authentication Mechanisms</li>
+                </ul>
+            </div>
+            
+            <div id="steps" class="tab-content">
+                <h2>Steps for Setup</h2>
+                <ol>
+                    <li><strong>Establish a Trusted Third Party (TTP) System:</strong> Register admins, assign encryption key roles, and enforce secure protocols.</li>
+                    <li><strong>Encrypt Files for Secure Sharing:</strong> Use AES-256 encryption and apply access control lists.</li>
+                    <li><strong>Configure Access Controls:</strong> Define user roles and limit admin privileges.</li>
+                    <li><strong>Manage Encryption Keys:</strong> Create and store unique keys securely.</li>
+                    <li><strong>Implement Secure File Sharing Practices:</strong> Enable file expiry, download limits, and read-only access.</li>
+                    <li><strong>Conduct Regular Security Audits:</strong> Review logs, rotate encryption keys, and audit for unauthorized access.</li>
+                </ol>
+            </div>
+
+            <div id="feedback" class="tab-content">
+                <h2>Give Us Your Feedback</h2>
+                <p>We appreciate your feedback! Let us know how we can improve.</p>
+                
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" placeholder="Enter your name" required>
+                
+                <label for="feedback-message">Your Feedback:</label>
+                <textarea id="feedback-message" placeholder="Type your message here..." rows="4" required></textarea>
+                
+                <button onclick="sendFeedback()">Submit Feedback</button>
+            </div>
+        </div>
+        <script src="/js/script.js"></script>
+        <iframe src="http://localhost:8050" width=700 height=600>
+
+    </body>
+</html>
