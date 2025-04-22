@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>ByteTower</title>
+        <link rel="stylesheet" href="/css/styles.css">
+
+    </head>
+    <body>
+        <div class="toolbar">
+            <button class="menu-button" id="menuButton" onclick="toggleSidebar()"> ≡ Menu</button> <!--windows key + . for the symbol--> 
+            <h1>ByteTower Dashboard</h1>
+        </div>
+
+        <div class="sidebar" id="sidebar">
+            <button class="close-sidebar-btn" onclick="toggleSidebar()">✕</button>
+            <ul>
+                <li><a href="/" >Secure Sharing</a></li>
+                <li><a href="/encryption" class="sidebar-link">Encrypt Sensitive Information</a></li>
+                <li><a href="/fileSharing" class="sidebar-link">Scam Awareness</a></li>
+                <li><a href="/scamAwareness" class="sidebar-link">Secure File Sharing with Other Users</a></li>
+                <li><a href="/secureSharing" class="sidebar-link">Track Real-Time Cyber Threats</a></li>
+                <li><a href="/threatTracking" class="sidebar-link">Malicious Software</a></li>
+                <li><a href="/digitalSign" class="sidebar-link">Verifying Digital Signatures</a></li>
+                <li><a href="/feedback" class="sidebar-link">Feedback</a></li>
+            </ul>
+        </div>
+
+        <div id="tab" class="tabs">
+            <ul class="tab-list">
+                <li class="tab active" onclick="showTab('general')">General</li>
+                <li class="tab" onclick="showTab('platforms')">Platforms</li>
+                <li class="tab" onclick="showTab('requirements')">Requirements</li>
+                <li class="tab" onclick="showTab('steps')">Steps</li>
+                <!-- <li class="tab" onclick="showTab('feedback')">Feedback</li> -->
+            </ul>
+        </div>
+
+        <div id="content" class="content">
+            <div id="general" class="tab-content active">
+                <h2>What is "Secure File Transfer"?</h2>
+                <p>Secure file transfer is, as the name suggests, a way to securely transfer data from one point to another.
+                    This is done in many ways, such as using encryption, authentication, transfer services, and many more. Secure file transfer can be as complex as setting up cloud services,
+                    to as simple as putting files on a USB thumb stick and handing it to another person.<br>
+                </p>
+                <h2>Why should we care about secure file transfer?</h2> 
+                <!-- <h3></h3>  -->
+                    <p> Think of how many times you send data on the internet, log 
+                        on to a website, put your banking information into a checkout  
+                        screen, or even just send videos to other people. Most of this  
+                        information isn’t something you’d simply say to the public.  
+                        Without secure file transfer, this is basically what is happening;  
+                        yelling your debit card number into a crowd of people or giving  
+                        everybody your password to important accounts, if you wouldn’t  
+                        do any of these things, then secure file transfer is your friend. 
+                    </p>
+                <h2>What can you do to protect yourself?</h2> 
+                <p>There are many ways to protect yourself when transferring files securely.  These can include, but are not limited to: </p> 
+                    <ul>
+                        <li>Using apps/websites such as DropBox or PrivateBin</li>
+                        <li>Use multi-factor authentication</li>
+                        <li>Password-protected files, time limits on shared files</li>
+                        <li>Always use encryption!</li>
+                    </ul>
+
+                <h3>Procedure:</h3> 
+                     <p>Procedures are a designated order of actions that combat that attacker's tactic<br>
+                        from infiltrating important data. They are detailed descriptions that the organization	will choose to execute the desired action.</p>
+                <p>
+                    The confidentiality and integrity of stored and retrieved files are preserved through effective user access management and encryption protocols. 
+                    Using a Trusted Third Party (TTP) ensures that data transfers between employees remain secure and protected against malicious attacks. 
+                    Effective key management strategies also contribute to ensuring only authorized users can decrypt and access sensitive files. 
+                </p>
+                <img src="/images/security.png" alt="Security Illustration" class="clipart">
+            </div>
+                
+            <div id="platforms" class="tab-content">
+                <h2>Trusted Third Party Platforms for Secure File Sharing</h2>
+                <h3>What are TTP&#39S (Trusted Thrird Party's)</h3>     
+                <p>TTP stands for Tactics, Techniques, and Procedure. Below is more information regarding these topics.</p>
+                <h3>Tactics:</h3>
+                <p>Tactics are a high level description of the behavior and strategy from any threat factor. These factors include showing adversary to achieve any specific goal you may have from any objective.</p>    
+                <h3>Techniques:</h3> 
+                <p>Techniques are not specified for your organization; techniques are non-detailed guidelines that showcase different methods on how cyber-attackers use them. 
+                    From doing any technique it is important to identify any distinction, between factors or threat actors to breach your information.</p>   
+                <h3>Procedure:</h3>
+                <p>Procedures are a designated order of actions that combat that attacker&#39s tactic from infiltrating important data. They are detailed descriptions that the organization<br>
+                    will choose to execute the desired action. </p> 
+
+                <ul class="platform-links">
+                    <li><a href="#" onclick="showPlatformInfo('dropbox', event)">Dropbox TTP Setup</a></li>
+                    <li><a href="#" onclick="showPlatformInfo('google_drive', event)">Google Drive TTP Setup</a></li>
+                    <li><a href="#" onclick="showPlatformInfo('onedrive', event)">OneDrive TTP Setup</a></li>
+                    <li><a href="#" onclick="showPlatformInfo('sharepoint', event)">SharePoint TTP Setup</a></li>
+                    <li><a href="#" onclick="showPlatformInfo('privatebin', event)">PrivateBin Setup</a></li>
+                </ul>
+                <div id="platform-info" class="info-container"></div>
+            </div>
+
+            <div id="requirements" class="tab-content">
+                <h2>Requirements for Secure File Sharing</h2>
+                <p>
+                    For security file transfer, there are many steps that should be taken to ensure proper data security, including: 
+                </p>
+                <ul>
+                    <li><strong>Proper encryption standards:</strong> Always encrypt data both when in transit, as well as when data is at rest. There are numerous encryption algorithms, however, most stick to AES and RSA due to their complexity and difficulty to crack.</li>
+                    <li><strong>Authentication:</strong> Users should always be required to use authentication methods, whether that be biometrics, a 2FA app, or any of the other numerous authentication methods to ensure the user is who they say they are.</li>
+                    <li><strong>Secure connection:</strong> Users in a corporate environment should always use a VPN when transferring files.</li>
+                    <li>Key Management Strategy</li>
+                    <li>Authentication Mechanisms</li>
+                </ul>
+            </div>
+            
+            <div id="steps" class="tab-content">
+                <h2>Steps for Setup</h2>
+                <ol>
+                    <li><strong>Establish a Trusted Third Party (TTP) System:</strong> Register admins, assign encryption key roles, and enforce secure protocols.</li>
+                    <li><strong>Encrypt Files for Secure Sharing:</strong> Use AES-256 encryption and apply access control lists.</li>
+                    <li><strong>Configure Access Controls:</strong> Define user roles and limit admin privileges.</li>
+                    <li><strong>Manage Encryption Keys:</strong> Create and store unique keys securely.</li>
+                    <li><strong>Implement Secure File Sharing Practices:</strong> Enable file expiry, download limits, and read-only access.</li>
+                    <li><strong>Conduct Regular Security Audits:</strong> Review logs, rotate encryption keys, and audit for unauthorized access.</li>
+                </ol>
+            </div>
+
+            <!-- <div id="feedback" class="tab-content">
+                <h2>Give Us Your Feedback</h2>
+                <p>We appreciate your feedback! Let us know how we can improve.</p>
+                
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" placeholder="Enter your name" required>
+                
+                <label for="feedback-message">Your Feedback:</label>
+                <textarea id="feedback-message" placeholder="Type your message here..." rows="4" required></textarea>
+                
+                <button onclick="sendFeedback()">Submit Feedback</button>
+            </div> -->
+        <script src="/js/script.js"></script>
+        <!-- <iframe src="http://localhost:8050" width=700 height=600> -->
+
+    </body>
+</html>

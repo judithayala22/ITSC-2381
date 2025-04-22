@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>ByteTower</title>
+        <link rel="stylesheet" href="/css/styles.css">
+    </head>
+    <body>
+        <div class="toolbar">
+            <button class="menu-button" id="menuButton" onclick="toggleSidebar()"> ≡ Menu</button> <!--windows key + . for the symbol--> 
+            <h1>ByteTower Dashboard</h1>
+        </div>
+        <div class="sidebar" id="sidebar">
+            <button class="close-sidebar-btn" onclick="toggleSidebar()">✕</button>
+            <ul>
+                <li><a href="/">Secure Sharing</a></li>
+                <li><a href="/encryption">Encrypt Sensitive Information</a></li>
+                <li><a href="/fileSharing">Scam Awareness</a></li>
+                <li><a href="/scamAwareness">Secure File Sharing with Other Users</a></li>
+                <li><a href="/secureSharing">Track Real-Time Cyber Threats</a></li>
+                <li><a href="/threatTracking">Malicious Software</a></li>
+                <li><a href="/digitalSign">Verifying Digital Signatures</a></li>
+            </ul>
+        </div>
+
+        <div id="tab" class="tabs">
+            <ul class="tab-list">
+                <!-- <li class="tab active" onclick="showTab('general')">General</li>
+                <li class="tab" onclick="showTab('platforms')">Platforms</li>
+                <li class="tab" onclick="showTab('requirements')">Requirements</li>
+                <li class="tab" onclick="showTab('steps')">Steps</li> -->
+                <!-- <li class="tab" onclick="showTab('feedback')">Feedback</li> -->
+            </ul>
+        </div>
+
+        <div class = "feedback">
+          <h2>Project Feedback Form</h2>
+          <form action="http://localhost:8050/submit" method="POST">
+            <label for="name">Your Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+        
+            <label for="email">Your Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+        
+            <label for="feedback">Your Feedback:</label><br>
+            <textarea id="feedback" name="feedback" rows="6" cols="40" required></textarea><br><br>
+        
+            <input type="submit" value="Send Feedback">
+          </form>
+        </div>
+        <script src="/js/script.js"></script>
+    </body>
+</html>
